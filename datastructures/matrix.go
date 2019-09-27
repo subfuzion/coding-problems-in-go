@@ -5,20 +5,23 @@ import (
 	"strings"
 )
 
+// Matrix of integers
 type Matrix [][]int
 
-func (m Matrix) Equal(m2 Matrix) bool {
-	if m2 == nil {
+// Equal tests that the other matrix has the same number of rows and columns
+// containing the same values
+func (m Matrix) Equal(other Matrix) bool {
+	if other == nil {
 		return false
 	}
 
-	if len(m) != len(m2) || len(m[0]) != len(m2[0]) {
+	if len(m) != len(other) || len(m[0]) != len(other[0]) {
 		return false
 	}
 
 	for i, row := range m {
 		for j, val := range row {
-			if val != m2[i][j] {
+			if val != other[i][j] {
 				return false
 			}
 		}
@@ -27,6 +30,7 @@ func (m Matrix) Equal(m2 Matrix) bool {
 	return true
 }
 
+// Square returns true if the number of rows and columns are equal
 func (m Matrix) Square() bool {
 	if len(m) != 0 && len(m) == len(m[0]) {
 		return true
@@ -34,6 +38,7 @@ func (m Matrix) Square() bool {
 	return false
 }
 
+// String returns the matrix as a formatted string
 func (m Matrix) String() string {
 	b := strings.Builder{}
 	for _, row := range m {
