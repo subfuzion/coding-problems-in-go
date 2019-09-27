@@ -1,6 +1,8 @@
 package matrix_ops
 
-func nullify(m matrix) bool {
+import "github.com/subfuzion/coding-problems-in-go/datastructures"
+
+func nullify(m datastructures.Matrix) bool {
 	if len(m) == 0 || len(m[0]) == 0 {
 		return false
 	}

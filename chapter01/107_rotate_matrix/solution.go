@@ -1,7 +1,9 @@
 package matrix_ops
 
-func rotate(m matrix) bool {
-	if !m.square() {
+import "github.com/subfuzion/coding-problems-in-go/datastructures"
+
+func rotate(m datastructures.Matrix) bool {
+	if !m.Square() {
 		return false
 	}
 

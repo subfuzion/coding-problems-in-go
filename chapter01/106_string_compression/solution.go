@@ -6,11 +6,11 @@ import (
 )
 
 func compress(s string) string {
-	// use a string builder for efficiency while building compressed string
-	b := strings.Builder{}
-
 	// string as a character (rune) array
 	chars := []rune(s)
+
+	// use a string builder for efficiency while building compressed string
+	b := strings.Builder{}
 
 	// same character counter
 	n := 0

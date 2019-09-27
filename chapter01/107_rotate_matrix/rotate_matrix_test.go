@@ -1,35 +1,36 @@
 package matrix_ops
 
 import (
+	"github.com/subfuzion/coding-problems-in-go/datastructures"
 	"testing"
 
-	"github.com/subfuzion/coding-problems-in-go/pkg/test"
+	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
-// RotateF is the type of function that implements the solution
-type RotateF func(matrix) bool
+// F is the type of function that implements the solution
+type F func(datastructures.Matrix) bool
 
-// RotateTest defines a test case
-type RotateTest struct {
-	Input    matrix
-	Expected matrix
+// Test defines a test case
+type Test struct {
+	Input    datastructures.Matrix
+	Expected datastructures.Matrix
 }
 
-var RotateTests = []RotateTest{
+var Tests = []Test{
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{0, 1, 2},
 			{3, 4, 5},
 			{6, 7, 8},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{6, 3, 0},
 			{7, 4, 1},
 			{8, 5, 2},
 		},
 	},
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{0, 1, 2, 3, 4, 5},
 			{6, 7, 8, 9, 10, 11},
 			{12, 13, 14, 15, 16, 17},
@@ -37,7 +38,7 @@ var RotateTests = []RotateTest{
 			{24, 25, 26, 27, 28, 29},
 			{30, 31, 32, 33, 34, 35},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{30, 24, 18, 12, 6, 0},
 			{31, 25, 19, 13, 7, 1},
 			{32, 26, 20, 14, 8, 2},
@@ -48,10 +49,10 @@ var RotateTests = []RotateTest{
 	},
 }
 
-func TestRotateSolution(t *testing.T) {
-	for _, f := range RotateSolutions {
+func TestSolution(t *testing.T) {
+	for _, f := range Solutions {
 		t.Run(test.GetFileFuncName(f), func(t *testing.T) {
-			for _, test := range RotateTests {
+			for _, test := range Tests {
 				actual := test.Input
 				expected := test.Expected
 
@@ -62,7 +63,7 @@ func TestRotateSolution(t *testing.T) {
 					t.Errorf("error rotating matrix (must be square with non-zero dimensions):\n%v", test.Input)
 				}
 
-				if !actual.equal(expected) {
+				if !actual.Equal(expected) {
 					t.Errorf("actual != expected\nActual:\n%sExpected:\n%s", actual, expected)
 				}
 			}
@@ -72,7 +73,7 @@ func TestRotateSolution(t *testing.T) {
 
 // TODO - add your own solutions to the list below
 // Solutions maps descriptive names to solution implementations
-var RotateSolutions = []RotateF{
+var Solutions = []F{
 	rotate,
 	// rotate1,
 	// ...
@@ -80,6 +81,6 @@ var RotateSolutions = []RotateF{
 
 // TODO - implement (and update the Solutions list, above)
 // assumes rune array is large enough to hold the extra characters after conversion
-func rotate1(m matrix) bool {
+func rotate1(m datastructures.Matrix) bool {
 	return false
 }

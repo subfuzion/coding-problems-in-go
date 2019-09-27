@@ -1,30 +1,31 @@
 package matrix_ops
 
 import (
+	"github.com/subfuzion/coding-problems-in-go/datastructures"
 	"testing"
 
-	"github.com/subfuzion/coding-problems-in-go/pkg/test"
+	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
-// ZeroF is the type of function that implements the solution
-type ZeroF func(matrix) bool
+// F is the type of function that implements the solution
+type F func(datastructures.Matrix) bool
 
-// ZeroTest defines a test case
-type ZeroTest struct {
-	Input    matrix
-	Expected matrix
+// Test defines a test case
+type Test struct {
+	Input    datastructures.Matrix
+	Expected datastructures.Matrix
 }
 
-var ZeroTests = []ZeroTest{
+var ZeroTests = []Test{
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
@@ -33,14 +34,14 @@ var ZeroTests = []ZeroTest{
 		},
 	},
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 0, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 0, 1},
 			{1, 1, 1, 1, 1, 1},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{1, 1, 0, 1, 0, 1},
 			{0, 0, 0, 0, 0, 0},
 			{1, 1, 0, 1, 0, 1},
@@ -49,14 +50,14 @@ var ZeroTests = []ZeroTest{
 		},
 	},
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{1, 0, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{0, 1, 1, 1, 1, 1},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{0, 0, 0, 0, 0, 0},
 			{0, 0, 1, 1, 1, 1},
 			{0, 0, 1, 1, 1, 1},
@@ -65,14 +66,14 @@ var ZeroTests = []ZeroTest{
 		},
 	},
 	{
-		Input: matrix{
+		Input: datastructures.Matrix{
 			{0, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1},
 		},
-		Expected: matrix{
+		Expected: datastructures.Matrix{
 			{0, 0, 0, 0, 0, 0},
 			{0, 1, 1, 1, 1, 1},
 			{0, 1, 1, 1, 1, 1},
@@ -82,8 +83,8 @@ var ZeroTests = []ZeroTest{
 	},
 }
 
-func TestZeroSolution(t *testing.T) {
-	for _, f := range ZeroSolutions {
+func TestSolution(t *testing.T) {
+	for _, f := range Solutions {
 		t.Run(test.GetFileFuncName(f), func(t *testing.T) {
 			for _, test := range ZeroTests {
 				actual := test.Input
@@ -96,7 +97,7 @@ func TestZeroSolution(t *testing.T) {
 					t.Errorf("error rotating matrix (must be square with non-zero dimensions):\n%v", test.Input)
 				}
 
-				if !actual.equal(expected) {
+				if !actual.Equal(expected) {
 					t.Errorf("actual != expected\nActual:\n%sExpected:\n%s", actual, expected)
 				}
 			}
@@ -106,7 +107,7 @@ func TestZeroSolution(t *testing.T) {
 
 // TODO - add your own solutions to the list below
 // Solutions maps descriptive names to solution implementations
-var ZeroSolutions = []ZeroF{
+var Solutions = []F{
 	nullify,
 	// nullify1,
 	// ...
@@ -114,6 +115,6 @@ var ZeroSolutions = []ZeroF{
 
 // TODO - implement (and update the Solutions list, above)
 // assumes rune array is large enough to hold the extra characters after conversion
-func nullify1(m matrix) bool {
+func nullify1(m datastructures.Matrix) bool {
 	return false
 }

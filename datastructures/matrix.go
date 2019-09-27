@@ -1,13 +1,13 @@
-package matrix_ops
+package datastructures
 
 import (
 	"fmt"
 	"strings"
 )
 
-type matrix [][]int
+type Matrix [][]int
 
-func (m matrix) equal(m2 matrix) bool {
+func (m Matrix) Equal(m2 Matrix) bool {
 	if m2 == nil {
 		return false
 	}
@@ -27,14 +27,14 @@ func (m matrix) equal(m2 matrix) bool {
 	return true
 }
 
-func (m matrix) square() bool {
+func (m Matrix) Square() bool {
 	if len(m) != 0 && len(m) == len(m[0]) {
 		return true
 	}
 	return false
 }
 
-func (m matrix) String() string {
+func (m Matrix) String() string {
 	b := strings.Builder{}
 	for _, row := range m {
 		for _, val := range row {

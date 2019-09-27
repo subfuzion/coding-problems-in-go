@@ -3,7 +3,7 @@ package check_permutation
 import (
 	"testing"
 
-	"github.com/subfuzion/coding-problems-in-go/pkg/test"
+	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
 // F is the type of function that implements the solution
