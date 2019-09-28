@@ -17,13 +17,13 @@ type Test struct {
 
 // Tests is a test suite
 var Tests = []Test{
-	Test{"a", true},
-	Test{"ab", true},
-	Test{"abcdefghijk", true},
-	Test{"abcxyz", true},
-	Test{"aa", false},
-	Test{"abcc", false},
-	Test{"abccde", false},
+	{"a", true},
+	{"ab", true},
+	{"abcdefghijk", true},
+	{"abcxyz", true},
+	{"aa", false},
+	{"abcc", false},
+	{"abccde", false},
 }
 
 func TestSolution(t *testing.T) {

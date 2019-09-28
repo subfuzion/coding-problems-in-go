@@ -18,10 +18,10 @@ type Test struct {
 
 // Tests is a test suite
 var Tests = []Test{
-	Test{"atco cta", "taco cat", true},
-	Test{"aan", "ana", true},
-	Test{"anan", "anna", true},
-	Test{"aaanx", "", false},
+	{"atco cta", "taco cat", true},
+	{"aan", "ana", true},
+	{"anan", "anna", true},
+	{"aaanx", "", false},
 }
 
 func TestSolution(t *testing.T) {
