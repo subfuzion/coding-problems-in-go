@@ -1,10 +1,10 @@
 package remove_dups
 
 import (
-	"github.com/subfuzion/coding-problems-in-go/test"
 	"testing"
 
 	ds "github.com/subfuzion/coding-problems-in-go/datastructures"
+	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
 type F func(*ds.Node) bool
@@ -14,14 +14,65 @@ type Test struct {
 	Expected *ds.Node
 }
 
+var listNoDuplicates = &ds.Node{
+	Data: 1, Next: &ds.Node{
+		Data: 2, Next: &ds.Node{
+			Data: 3, Next: nil,
+		},
+	},
+}
+
+
 var Tests = []Test{
 	{
-		&ds.Node{1, &ds.Node{2, &ds.Node{3, nil}}},
-		&ds.Node{1, &ds.Node{2, &ds.Node{3, nil}}},
+		// no duplicates: 1->2->3
+		Input: &ds.Node{
+			Data: 1, Next: &ds.Node{
+				Data: 2, Next: &ds.Node{
+					Data: 3, Next: nil,
+				},
+			},
+		},
+		Expected: listNoDuplicates,
 	},
 	{
-		&ds.Node{1, &ds.Node{2, &ds.Node{3, &ds.Node{3, nil}}}},
-		&ds.Node{1, &ds.Node{2, &ds.Node{3, nil}}},
+		// duplicates: 1->*1*->2->3
+		Input: &ds.Node{
+			Data: 1, Next: &ds.Node{
+				Data: 1, Next: &ds.Node{
+					Data: 2, Next: &ds.Node{
+						Data: 3, Next: nil,
+					},
+				},
+			},
+		},
+		Expected: listNoDuplicates,
+	},
+	{
+		// duplicates: 1->2->*2*->3
+		Input: &ds.Node{
+			Data: 1, Next: &ds.Node{
+				Data: 2, Next: &ds.Node{
+					Data: 2, Next: &ds.Node{
+						Data: 3, Next: nil,
+					},
+				},
+			},
+		},
+		Expected: listNoDuplicates,
+	},
+	{
+		// duplicates: 1->2->3->*3*
+		Input: &ds.Node{
+			Data: 1, Next: &ds.Node{
+				Data: 2, Next: &ds.Node{
+					Data: 3, Next: &ds.Node{
+						Data: 3, Next: nil,
+					},
+				},
+			},
+		},
+		Expected: listNoDuplicates,
 	},
 }
 
@@ -30,8 +81,7 @@ func TestSolution(t *testing.T) {
 	for _, f := range Solutions {
 		t.Run(test.GetFileFuncName(f), func(t *testing.T) {
 			for _, test := range Tests {
-				// we want to be able to reuse the sample data, so clone it
-				actual := test.Input.Clone()
+				actual := test.Input
 				expected := test.Expected
 
 				if ok := f(actual); !ok {

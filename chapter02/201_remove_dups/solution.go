@@ -7,14 +7,14 @@ func removeDupsSet(n *ds.Node) bool {
 
 	node := n
 	set.Add(node.Data)
-	next := node.Next
-	for next != nil {
-		if set.Add(next.Data) {
-			node = next
+	for node.Next != nil {
+		if set.Add(node.Next.Data) {
+			node = node.Next
+		} else {
+			node.Next = node.Next.Next
+
 		}
-		next = next.Next
 	}
-	node.Next = nil
 	return true
 }
 
