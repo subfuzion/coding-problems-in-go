@@ -34,7 +34,7 @@ func TestSolution(t *testing.T) {
 	for _, f := range Solutions {
 		t.Run(test.GetFileFuncName(f), func(t *testing.T) {
 			for _, test := range Tests {
-				actual := isStringRotation(test.A, test.B)
+				actual := f(test.A, test.B)
 				expected := test.Expected
 
 				if actual != expected {

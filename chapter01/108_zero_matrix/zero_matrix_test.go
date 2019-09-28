@@ -16,7 +16,7 @@ type Test struct {
 	Expected datastructures.Matrix
 }
 
-var ZeroTests = []Test{
+var Tests = []Test{
 	{
 		Input: datastructures.Matrix{
 			{1, 1, 1, 1, 1, 1},
@@ -86,7 +86,7 @@ var ZeroTests = []Test{
 func TestSolution(t *testing.T) {
 	for _, f := range Solutions {
 		t.Run(test.GetFileFuncName(f), func(t *testing.T) {
-			for _, test := range ZeroTests {
+			for _, test := range Tests {
 				actual := test.Input
 				expected := test.Expected
 
