@@ -11,29 +11,6 @@ type Node struct {
 	Next *Node
 }
 
-// Length returns length of single linked list starting from n
-func (n *Node) Length() int {
-	count := 0
-	for node := n; node != nil; {
-		if node != nil {
-			count++
-		}
-		node = node.Next
-	}
-	return count
-}
-
-// Equal returns true if n.Data == n2.Data
-func (n *Node) Equal(n2 *Node) bool {
-	switch {
-	case n == n2:
-		return true
-	case n != nil && n2 != nil:
-		return n.Data == n2.Data
-	}
-	return false
-}
-
 // String stringifies the lists starting from node
 func (n Node) String() string {
 	b := strings.Builder{}
@@ -50,17 +27,15 @@ func (n Node) String() string {
 	return b.String()
 }
 
-// Clone returns a copy of the list with new Node instances
-func (n Node) Clone() *Node {
-	head := &Node{Data: n.Data}
-
-	for clone, node := head, n.Next; node != nil; {
-		clone.Next = &Node{Data: node.Data, Next: node.Next}
-		clone = clone.Next
-		node = node.Next
+// Equal returns true if n.Data == n2.Data
+func (n *Node) Equal(n2 *Node) bool {
+	switch {
+	case n == n2:
+		return true
+	case n != nil && n2 != nil:
+		return n.Data == n2.Data
 	}
-
-	return head
+	return false
 }
 
 // ListEqual compares two lists comprised of a chain of Nodes to check if
@@ -92,5 +67,40 @@ func ListEqual(n1 *Node, n2 *Node) bool {
 	}
 
 	return false
+}
+
+// Length returns length of single linked list starting from n
+func (n *Node) Length() int {
+	count := 0
+	for node := n; node != nil; {
+		if node != nil {
+			count++
+		}
+		node = node.Next
+	}
+	return count
+}
+
+// Clone returns a copy of the list with new Node instances
+func (n Node) Clone() *Node {
+	head := &Node{Data: n.Data}
+
+	for clone, node := head, n.Next; node != nil; {
+		clone.Next = &Node{Data: node.Data, Next: node.Next}
+		clone = clone.Next
+		node = node.Next
+	}
+
+	return head
+}
+
+// Slice returns a list of nodes as a slice
+func (n *Node) Slice() []*Node {
+	slice := []*Node{}
+	for n != nil {
+		slice = append(slice, n)
+		n = n.Next
+	}
+	return slice
 }
 
