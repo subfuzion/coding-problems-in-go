@@ -17,18 +17,26 @@ type Test struct {
 	// supplied node
 	ShouldSucceed  bool
 
-	// Input points to a node that is supposed to be in the middle of a list
+	// Input points to a node that is supposed to represent a node in
+	// the middle of a list
 	Input *ds.Node
 
 	// Expected is what the list should look like after removing a node
+	// (Since we don't actually have a pointer to the head of the list,
+	// we only compare what the updated list should look like starting
+	// from the supplied middle node.
+	// Example: Assuming list 1->2->3->4->5
+	//          Input:    3->4->5
+	//          Expected: 4->5
+	//          (so the full list would ultimately look like 1->2->4->5)
 	Expected *ds.Node
 }
 
 var Tests = []Test{
 		{
 			ShouldSucceed:  false,
-			Input:    &ds.Node{3, nil},
-			Expected: &ds.Node{3, nil},
+			Input:    &ds.Node{3, nil}, // last node
+			Expected: &ds.Node{3, nil}, // error, so no change to original list
 		},
 		{
 			ShouldSucceed:  true,
@@ -54,7 +62,7 @@ func TestSolution(t *testing.T) {
 				if test.ShouldSucceed && err != nil {
 					t.Errorf("error (%s) for input: %v", err, test.Input)
 				} else if !test.ShouldSucceed && err == nil {
-					t.Errorf("expected nil result for input: %v, but got: %v", test.Input, list)
+					t.Errorf("expected error for input: %v", test.Input)
 				}
 
 				if !ds.ListEqual(list, expected) {
