@@ -25,7 +25,7 @@ func (set *RuneSet) Add(r rune) bool {
 // isUniqueUsingSet uses a set to check if characters in a string are unique.
 func isUniqueUsingSet(s string) bool {
 	set := NewRuneSet()
-	for _, r := range []rune(s) {
+	for _, r := range s {
 		if ok := set.Add(r); !ok {
 			return false
 		}
@@ -42,7 +42,7 @@ func isUniqueUsingSet(s string) bool {
 // are characters in the character set (this solution assumes only ASCII).
 func isUniqueUsingBitset(s string) bool {
 	set := 0
-	for _, ch := range []rune(s) {
+	for _, ch := range s {
 		val := ch - 'a'
 		mask := 1 << uint32(val)
 		if set&mask > 0 {

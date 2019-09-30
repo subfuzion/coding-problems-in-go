@@ -50,11 +50,12 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
-Check Permutation: Given two strings,write a method to decide if one is a permutation of the
-other.
- */
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Check Permutation: Given two strings,write a method to decide if one is a
+permutation of the other.
+******************************************************************************/
 func checkPermutation1(a, b string) bool {
 	return false
 }

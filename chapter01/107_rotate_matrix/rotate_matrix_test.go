@@ -1,8 +1,9 @@
 package matrix_ops
 
 import (
-	"github.com/subfuzion/coding-problems-in-go/datastructures"
 	"testing"
+
+	"github.com/subfuzion/coding-problems-in-go/datastructures"
 
 	"github.com/subfuzion/coding-problems-in-go/test"
 )
@@ -79,11 +80,13 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
-Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes,
-write a method to rotate the image by 90 degrees. Can you do this in place?
- */
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in
+the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you
+do this in place?
+******************************************************************************/
 func rotate1(m datastructures.Matrix) bool {
 	return false
 }

@@ -1,3 +1,4 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package loop_detection
 
 import (
@@ -17,8 +18,7 @@ type Test struct {
 }
 
 // Tests is a test suite
-var Tests = []Test{
-}
+var Tests = []Test{}
 
 func TestSolution(t *testing.T) {
 	for _, f := range Solutions {
@@ -28,7 +28,7 @@ func TestSolution(t *testing.T) {
 				expected := test.Expected
 
 				if actual != expected {
-					t.Errorf("\nexpected % for %v", expected, test.Input)
+					t.Errorf("\nexpected %v for %v", expected, test.Input)
 				}
 			}
 		})
@@ -43,17 +43,18 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement your own solution (and update the Solutions list, above)
-/*
-Loop Detection: Given a circular linked list, implement an algorithm that returns the node at the
-beginning of the loop.
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Loop Detection: Given a circular linked list, implement an algorithm that
+returns the node at the beginning of the loop.
 DEFINITION
-Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node,
-so as to make a loop in the linked list.
+Circular linked list: A (corrupt) linked list in which a node's next pointer
+points to an earlier node, so as to make a loop in the linked list.
 EXAMPLE
 Input:  A -> B -> C -> D -> E -> C [the same C as earlier]
 Output: C
- */
+******************************************************************************/
 func detectLoop1(node *ds.Node) *ds.Node {
 	return nil
 }

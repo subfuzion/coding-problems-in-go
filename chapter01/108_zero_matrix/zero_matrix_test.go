@@ -1,8 +1,9 @@
 package matrix_ops
 
 import (
-	"github.com/subfuzion/coding-problems-in-go/datastructures"
 	"testing"
+
+	"github.com/subfuzion/coding-problems-in-go/datastructures"
 
 	"github.com/subfuzion/coding-problems-in-go/test"
 )
@@ -113,10 +114,12 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
-Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
- */
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0,
+its entire row and column are set to 0.
+******************************************************************************/
 func nullify1(m datastructures.Matrix) bool {
 	return false
 }

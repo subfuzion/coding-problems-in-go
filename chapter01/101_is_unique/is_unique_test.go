@@ -47,11 +47,13 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
-Is Unique: Implement an algorithm to determine if a string has all unique characters.
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Is Unique: Implement an algorithm to determine if a string has all unique
+characters.
 What if you cannot use additional data structures?
- */
-func isUnique1(s string) bool {
+******************************************************************************/
+func is_Unique1(s string) bool {
 	return false
 }

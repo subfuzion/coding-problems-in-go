@@ -1,3 +1,4 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package delete_middle_node
 
 import (
@@ -17,7 +18,7 @@ type Test struct {
 	// (i.e., when node.Next is nil) and therefore can't be removed
 	// (because there is no next node to replace the contents of the
 	// supplied node
-	ShouldSucceed  bool
+	ShouldSucceed bool
 
 	// Input points to a node that is supposed to represent a node in
 	// the middle of a list
@@ -36,21 +37,21 @@ type Test struct {
 
 // Tests is a test suite
 var Tests = []Test{
-		{
-			ShouldSucceed:  false,
-			Input:    &ds.Node{3, nil}, // last node
-			Expected: &ds.Node{3, nil}, // error, so no change to original list
-		},
-		{
-			ShouldSucceed:  true,
-			Input: &ds.Node{3, &ds.Node{4, nil}},
-			Expected: &ds.Node{4, nil},
-		},
-		{
-			ShouldSucceed:  true,
-			Input:   &ds.Node{3, &ds.Node{4, &ds.Node{5, nil}}},
-			Expected: &ds.Node{4, &ds.Node{5, nil}},
-		},
+	{
+		ShouldSucceed: false,
+		Input:         &ds.Node{3, nil}, // last node
+		Expected:      &ds.Node{3, nil}, // error, so no change to original list
+	},
+	{
+		ShouldSucceed: true,
+		Input:         &ds.Node{3, &ds.Node{4, nil}},
+		Expected:      &ds.Node{4, nil},
+	},
+	{
+		ShouldSucceed: true,
+		Input:         &ds.Node{3, &ds.Node{4, &ds.Node{5, nil}}},
+		Expected:      &ds.Node{4, &ds.Node{5, nil}},
+	},
 }
 
 func TestSolution(t *testing.T) {
@@ -84,15 +85,16 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
 Delete Middle Node: Implement an algorithm to delete a node in the middle
 (i.e., any node but the first and last node, not necessarily the exact middle)
 of a singly linked list, given only access to that node.
 EXAMPLE
 Input: the node c from the linked list a->b->c->d->e->f
 Result: nothing is returned, but the new linked list looks like a->b->d->e->f
- */
+******************************************************************************/
 func removeMiddle1(node *ds.Node) error {
 	return nil
 }

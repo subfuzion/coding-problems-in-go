@@ -60,13 +60,16 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-// Compress string using the count of repeated characters. If compressed
-// string will not be smaller than the original, return the original.
-// Ex: "aabcccccaaa"
-// =>  "a2blc5a3"
-// Assume:
-// - the string consists only of uppercase and lowercase letters (a - z).
-// - the rune array is large enough to hold the extra characters after conversion
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Compress string using the count of repeated characters. If compressed
+string will not be smaller than the original, return the original.
+Ex: "aabcccccaaa"
+=>  "a2blc5a3"
+Assume:
+- the string consists only of uppercase and lowercase letters (a - z).
+- the rune array is large enough to hold the extra characters after conversion
+******************************************************************************/
 func compress1(runes []rune, nRunes int) {
 }

@@ -1,8 +1,10 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package sum_lists
 
 import (
-	"github.com/subfuzion/coding-problems-in-go/test"
 	"testing"
+
+	"github.com/subfuzion/coding-problems-in-go/test"
 
 	ds "github.com/subfuzion/coding-problems-in-go/datastructures"
 )
@@ -81,13 +83,16 @@ var ReverseSolutions = []F{
 	// ...
 }
 
-// TODO - implement your own solution
-// Update either the ForwardSolutions or ReverseSolutions list, above,
-// as appropriate for your solution.
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+// * Update either the ForwardSolutions or ReverseSolutions list, above, as
+//   appropriate for your solution.
+/******************************************************************************
 /*
-Sum Lists: You have two numbers represented by a linked list, where each node contains a single digit.
-The digits are stored in reverse order, such that the 1 's digit is at the head of the list.
-Write a function that adds the two numbers and returns the sum as a linked list.
+Sum Lists: You have two numbers represented by a linked list, where each node
+contains a single digit. The digits are stored in reverse order, such that 1 's
+digit is at the head of the list. Write a function that adds the two numbers
+and returns the sum as a linked list.
 EXAMPLE
 Input:  (7-> 1 -> 6) + (5 -> 9 -> 2). That is, 617 + 295.
 Output: 2 -> 1 -> 9. That is, 912.
@@ -96,7 +101,7 @@ Suppose the digits are stored in forward order. Repeat the above problem.
 EXAMPLE
 Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 Output: 9 -> 1 -> 2. That is, 912.
- */
+******************************************************************************/
 func sumLists1(a, b *ds.Node) *ds.Node {
 	return nil
 }

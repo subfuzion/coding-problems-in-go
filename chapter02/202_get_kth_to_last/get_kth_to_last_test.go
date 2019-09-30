@@ -1,3 +1,4 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package get_kth_to_last
 
 import (
@@ -9,7 +10,6 @@ import (
 
 // F is the type of function that implements the solution
 type F func(*ds.Node, int) *ds.Node
-
 
 // Test defines a test case
 type Test struct {
@@ -90,10 +90,12 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement (and update the Solutions list, above)
-/*
-Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
- */
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
+Return Kth to Last: Implement an algorithm to find the kth to last element of a
+singly linked list.
+******************************************************************************/
 func kthToLast1(n *ds.Node, k int) *ds.Node {
 	return nil
 }

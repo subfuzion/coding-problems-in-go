@@ -1,3 +1,4 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package palindrome
 
 import (
@@ -13,7 +14,8 @@ type F func(n *ds.Node) bool
 // Test defines a test case
 type Test struct {
 	Input    *ds.Node
-	Expected bool}
+	Expected bool
+}
 
 // Tests is a test suite
 var Tests = []Test{
@@ -58,10 +60,11 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement your own solution (and update the Solutions list, above)
-/*
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
 Palindrome: Implement a function to check if a linked list is a palindrome.
- */
+******************************************************************************/
 func isPalindrome1(n *ds.Node) bool {
 	return false
 }

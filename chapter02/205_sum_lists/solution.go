@@ -1,6 +1,7 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package sum_lists
 
-import 	ds "github.com/subfuzion/coding-problems-in-go/datastructures"
+import ds "github.com/subfuzion/coding-problems-in-go/datastructures"
 
 func sumListsReverse(a, b *ds.Node) *ds.Node {
 	if a == nil || b == nil {
@@ -106,4 +107,3 @@ func sumListsForward(a, b *ds.Node) *ds.Node {
 	}
 	return c
 }
-

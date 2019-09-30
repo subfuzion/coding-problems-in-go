@@ -1,3 +1,4 @@
+//nolint:govet //linter: golangci-lint (disabling warnings for unkeyed fields in composites)
 package list_intersection
 
 import (
@@ -18,8 +19,7 @@ type Test struct {
 }
 
 // Tests is a test suite
-var Tests = []Test{
-}
+var Tests = []Test{}
 
 func TestSolution(t *testing.T) {
 	for _, f := range Solutions {
@@ -29,7 +29,7 @@ func TestSolution(t *testing.T) {
 				expected := test.Expected
 
 				if actual != expected {
-					t.Errorf("\nexpected % for intersection of %v and %v", expected, test.List1, test.List2)
+					t.Errorf("\nexpected %v for intersection of %v and %v", expected, test.List1, test.List2)
 				}
 			}
 		})
@@ -44,13 +44,14 @@ var Solutions = []F{
 	// ...
 }
 
-// TODO - implement your own solution (and update the Solutions list, above)
-/*
+//TODO - implement (and update the Solutions list, above)
+//nolint:deadcode,unused //golangci-lint
+/******************************************************************************
 Intersection: Given two (singly) linked lists, determine if the two lists intersect.
 Return the inter­ secting node. Note that the intersection is defined based on reference,
 not value. That is, if the kth node of the first linked list is the exact same node
 (by reference) as the jth node of the second linked list, then they are intersecting.
- */
+******************************************************************************/
 func intersects1(list1, list2 *ds.Node) *ds.Node {
 	return nil
 }
