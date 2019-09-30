@@ -80,7 +80,10 @@ var Solutions = []F{
 }
 
 // TODO - implement (and update the Solutions list, above)
-// assumes rune array is large enough to hold the extra characters after conversion
+/*
+Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes,
+write a method to rotate the image by 90 degrees. Can you do this in place?
+ */
 func rotate1(m datastructures.Matrix) bool {
 	return false
 }
