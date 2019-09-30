@@ -7,8 +7,10 @@ import (
 	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
+// F is the type of function that implements the solution
 type F func(*ds.Node) bool
 
+// Test defines a test case
 type Test struct {
 	Input    *ds.Node
 	Expected *ds.Node
@@ -22,7 +24,7 @@ var listNoDuplicates = &ds.Node{
 	},
 }
 
-
+// Tests is a test suite
 var Tests = []Test{
 	{
 		// no duplicates: 1->2->3

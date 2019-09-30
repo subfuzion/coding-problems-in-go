@@ -7,8 +7,11 @@ import (
 	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
+// F is the type of function that implements the solution
 type F func(*ds.Node, int) *ds.Node
 
+
+// Test defines a test case
 type Test struct {
 	Input    *ds.Node
 	K        int
@@ -18,6 +21,7 @@ type Test struct {
 var list1 = &ds.Node{1, nil}
 var list4 = &ds.Node{1, &ds.Node{2, &ds.Node{3, &ds.Node{4, nil}}}}
 
+// Tests is a test suite
 var Tests = []Test{
 	{
 		Input:    list1,

@@ -7,8 +7,10 @@ import (
 	"github.com/subfuzion/coding-problems-in-go/test"
 )
 
+// F is the type of function that implements the solution
 type F func(node *ds.Node) error
 
+// Test defines a test case
 type Test struct {
 	// ShouldSucceed is true if a node should be removed
 	// ShouldSucceed is false when a node is the end of a list
@@ -32,6 +34,7 @@ type Test struct {
 	Expected *ds.Node
 }
 
+// Tests is a test suite
 var Tests = []Test{
 		{
 			ShouldSucceed:  false,
