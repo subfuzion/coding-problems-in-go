@@ -91,6 +91,9 @@ var Solutions = []F{
 }
 
 // TODO - implement (and update the Solutions list, above)
+/*
+Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
+ */
 func kthToLast1(n *ds.Node, k int) *ds.Node {
 	return nil
 }

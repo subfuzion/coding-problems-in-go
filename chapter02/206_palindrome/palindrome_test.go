@@ -44,7 +44,8 @@ func TestSolution(t *testing.T) {
 
 				if actual != expected {
 					t.Errorf("\nexpected %t for %v", expected, test.Input)
-				}			}
+				}
+			}
 		})
 	}
 }
@@ -58,6 +59,9 @@ var Solutions = []F{
 }
 
 // TODO - implement your own solution (and update the Solutions list, above)
+/*
+Palindrome: Implement a function to check if a linked list is a palindrome.
+ */
 func isPalindrome1(n *ds.Node) bool {
 	return false
 }
