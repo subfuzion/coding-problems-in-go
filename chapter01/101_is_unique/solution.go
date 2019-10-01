@@ -4,32 +4,32 @@ package is_unique
 // Solution using a set
 //
 
-// RuneSet maps runes to empty struct{}'s
-// https://dave.cheney.net/2014/03/25/the-empty-struct
-type RuneSet map[rune]struct{}
+// isUniqueUsingSet uses a set (implemented with a map) to check
+// if characters in a string are unique.
+func isUniqueUsingSet(s string) bool {
+	// assume ASCII, but this can be modified for any character set
+	const sizeCharset = 128
 
-func NewRuneSet() *RuneSet {
-	return &RuneSet{}
-}
-
-// Add r to the set and return true; if already present in
-// the set then return false.
-func (set *RuneSet) Add(r rune) bool {
-	if _, exists := (*set)[r]; exists {
+	// If s is either empty or if there are more characters than the
+	// size of the character set, then somewhere in the string there
+	// must be duplicate characters
+	if s == "" || len(s) > sizeCharset {
 		return false
 	}
-	(*set)[r] = struct{}{}
-	return true
-}
 
-// isUniqueUsingSet uses a set to check if characters in a string are unique.
-func isUniqueUsingSet(s string) bool {
-	set := NewRuneSet()
-	for _, r := range s {
-		if ok := set.Add(r); !ok {
+	// map of runes to empty structs (the empty structs serve as flags)
+	// see: https://dave.cheney.net/2014/03/25/the-empty-struct
+	chars := map[rune]struct{}{/* empty map to start */}
+
+	// for each rune in s
+	for _, c := range s {
+		if _, found := chars[c]; found {
 			return false
 		}
+		//
+		chars[c] = struct{}{/* empty struct takes no space */}
 	}
+
 	return true
 }
 
@@ -40,15 +40,20 @@ func isUniqueUsingSet(s string) bool {
 // isUniqueUsingBitset uses a bitset to check if characters in a
 // string are unique. There must be at least as many bits as there
 // are characters in the character set (this solution assumes only ASCII).
+// This solution dispenses with the check shown in the previous one
+// for whether s either is empty or has more characters than the character
+// set.
 func isUniqueUsingBitset(s string) bool {
-	set := 0
-	for _, ch := range s {
-		val := ch - 'a'
-		mask := 1 << uint32(val)
-		if set&mask > 0 {
+	chars := 0
+
+	for _, c := range s {
+		val := c - 'a'
+		mask := 1 << val
+		if chars & mask > 0 {
 			return false
 		}
-		set |= mask
+		chars |= mask
 	}
+
 	return true
 }

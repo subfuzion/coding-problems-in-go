@@ -43,7 +43,7 @@ func TestSolution(t *testing.T) {
 var Solutions = []F{
 	isUniqueUsingSet,
 	isUniqueUsingBitset,
-	isUnique1,
+	// isUnique1,
 	// ...
 }
 
