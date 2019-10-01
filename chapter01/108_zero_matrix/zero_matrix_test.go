@@ -119,6 +119,7 @@ var Solutions = []F{
 /******************************************************************************
 Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0,
 its entire row and column are set to 0.
+Hints (Cracking the Coding Interview 6): #17, #74, #702
 ******************************************************************************/
 func nullify1(m datastructures.Matrix) bool {
 	return false

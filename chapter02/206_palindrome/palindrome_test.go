@@ -64,6 +64,7 @@ var Solutions = []F{
 //nolint:deadcode,unused //golangci-lint
 /******************************************************************************
 Palindrome: Implement a function to check if a linked list is a palindrome.
+Hints (Cracking the Coding Interview 6): #5, #13, #29, #61, #101
 ******************************************************************************/
 func isPalindrome1(n *ds.Node) bool {
 	return false

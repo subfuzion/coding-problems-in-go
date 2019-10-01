@@ -70,6 +70,7 @@ Ex: "aabcccccaaa"
 Assume:
 - the string consists only of uppercase and lowercase letters (a - z).
 - the rune array is large enough to hold the extra characters after conversion
+Hints (Cracking the Coding Interview 6): #92, #110
 ******************************************************************************/
 func compress1(runes []rune, nRunes int) {
 }

@@ -101,7 +101,8 @@ partitions.
 EXAMPLE
 Input:  3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition=5]
 Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
- *****************************************************************************/
+Hints (Cracking the Coding Interview 6): #3, #24
+******************************************************************************/
 func partition1(n *ds.Node, pivot int) *ds.Node {
 	return nil
 }

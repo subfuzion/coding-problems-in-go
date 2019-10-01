@@ -113,6 +113,7 @@ var Solutions = []F{
 /******************************************************************************
 Remove Dups: Write code to remove duplicates from an unsorted linked list. How
 would you solve this problem if a temporary buffer is not allowed?
+Hints (Cracking the Coding Interview 6): #9, #40
 ******************************************************************************/
 func removeDupsSet1(n *ds.Node) bool {
 	return false

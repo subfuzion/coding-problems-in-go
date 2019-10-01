@@ -60,6 +60,7 @@ The palindrome does not need to be limited to just dictionary words.
 EXAMPLE
 Input:  Tact Coa
 Output: True (permutations: "taco cat", "atco eta", etc.)
+Hints (Cracking the Coding Interview 6): #106, #121, #134, #136
 ******************************************************************************/
 func isPalindromePermutation1(s string) bool {
 	return false

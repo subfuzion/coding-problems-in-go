@@ -132,6 +132,7 @@ One Away: There are three types of edits that can be performed on strings:
 insert a character, remove a character, or replace a character.
 Given two strings, write a function to check if they are one edit (or zero
 edits) away.
+Hints (Cracking the Coding Interview 6): #23, #97, #130
 ******************************************************************************/
 func isOneEditAway1(a, b string) bool {
 	return false

@@ -55,6 +55,7 @@ var Solutions = []F{
 /******************************************************************************
 Check Permutation: Given two strings,write a method to decide if one is a
 permutation of the other.
+Hints (Cracking the Coding Interview 6): #1, #84, #122, #131
 ******************************************************************************/
 func checkPermutation1(a, b string) bool {
 	return false

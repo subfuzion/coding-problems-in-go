@@ -43,7 +43,7 @@ func TestSolution(t *testing.T) {
 var Solutions = []F{
 	isUniqueUsingSet,
 	isUniqueUsingBitset,
-	// isUnique1,
+	isUnique1,
 	// ...
 }
 
@@ -53,7 +53,8 @@ var Solutions = []F{
 Is Unique: Implement an algorithm to determine if a string has all unique
 characters.
 What if you cannot use additional data structures?
+Hints (Cracking the Coding Interview 6): #44, #117, #132
 ******************************************************************************/
-func is_Unique1(s string) bool {
+func isUnique1(s string) bool {
 	return false
 }

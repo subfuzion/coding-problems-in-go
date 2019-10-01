@@ -54,6 +54,7 @@ points to an earlier node, so as to make a loop in the linked list.
 EXAMPLE
 Input:  A -> B -> C -> D -> E -> C [the same C as earlier]
 Output: C
+Hints (Cracking the Coding Interview 6): #50, #69, #83, #90
 ******************************************************************************/
 func detectLoop1(node *ds.Node) *ds.Node {
 	return nil

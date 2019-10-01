@@ -66,6 +66,7 @@ additional characters, and that you are given the "true" length of the string.
 EXAMPLE
 Input:  "Mr John Smith ", 13
 Output: "Mr%20John%20Smith"
+Hints (Cracking the Coding Interview 6): #53, #118
 ******************************************************************************/
 func urlify1(runes []rune, nRunes int) {
 }
